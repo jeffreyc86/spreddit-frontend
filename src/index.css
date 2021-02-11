@@ -105,4 +105,13 @@ code {
   font-size: 25px;
   display: inline-block;
   text-decoration: none;
+  color: #262626;
+}
+
+.navbar-right a:visited{
+  color: #262626;
+}
+
+.navbar-right a:link {
+  color: #262626;
 }
