@@ -1,9 +1,11 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useHistory} from 'react-router-dom'
 
 
 
 function Navbar ({channels}) {
+
+    const history = useHistory()
 
     const channelLinks = channels.map(channel => {
         return(
@@ -17,12 +19,14 @@ function Navbar ({channels}) {
         )
     })
 
-    console.log(channelLinks)
+    function handleLogoClick() {
+        history.push("/")
+    }
 
     
     return (
         <div className="navbar">
-            <img className="navbar-logo" src={process.env.PUBLIC_URL + "/images/logo.jpg"} alt="spreddit" onClick={null}/>
+            <img className="navbar-logo" src={process.env.PUBLIC_URL + "/images/logo.jpg"} alt="spreddit" onClick={handleLogoClick}/>
             {/* only shows when currentuser is set */}
             <div className="dropdown">
                 <button className="dropbtn">Select a Channel</button>

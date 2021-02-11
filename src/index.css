@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #262626;
+  background-color: #EDEFF1;
   /* font-family: VAG Rounded; */
 }
 
@@ -20,12 +21,14 @@ code {
 }
 
 .navbar{
-  margin-top: 5px;
+  background-color: white;
+  height: 60px;
 }
 
 .navbar-logo{
   float: left;
   width: 180px;
+  margin-top: 4px;
   margin-left: 10px;
 }
 
