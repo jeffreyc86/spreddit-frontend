@@ -3,7 +3,7 @@ import {NavLink, useHistory} from 'react-router-dom'
 
 
 
-function Navbar ({channels}) {
+function Navbar ({channels, setCurrentUser}) {
 
     const history = useHistory()
 
@@ -12,6 +12,7 @@ function Navbar ({channels}) {
             <NavLink
                 to={`/channel/${channel.id}`}
                 exact
+                key={channel.id}
             >
                 <img className="dropdown-img" src={process.env.PUBLIC_URL + channel.image_url} alt={channel.name} />
                 <div className="dropdown-channel">{channel.name}</div>
@@ -21,6 +22,11 @@ function Navbar ({channels}) {
 
     function handleLogoClick() {
         history.push("/")
+    }
+
+    function handleLogOut() {
+        localStorage.removeItem("token")
+        setCurrentUser(null)
     }
 
     
@@ -39,8 +45,8 @@ function Navbar ({channels}) {
                 <NavLink to="/signup" exact>Sign Up</NavLink>
                 <NavLink to="/login" exact>Login</NavLink>
                    {/* only shows when currentuser is set */}
-                <NavLink to="/user" exact>Profile</NavLink>
-                <NavLink to="/logout" exact>Logout</NavLink>
+                <NavLink to="/profile" exact>Profile</NavLink>
+                <NavLink to="/" exact onClick={handleLogOut}>Logout</NavLink>
             </div>
         </div>
     )

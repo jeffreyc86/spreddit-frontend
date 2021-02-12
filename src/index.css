@@ -118,3 +118,8 @@ code {
 .navbar-right a:link {
   color: #262626;
 }
+
+.errors {
+  color: #FF4301;
+  font-weight: bold;
+}
