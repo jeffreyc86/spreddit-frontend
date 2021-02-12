@@ -3,14 +3,14 @@ import {NavLink, useHistory} from 'react-router-dom'
 
 
 
-function Navbar ({channels, setCurrentUser}) {
+function Navbar ({channels, currentUser, setCurrentUser}) {
 
     const history = useHistory()
 
     const channelLinks = channels.map(channel => {
         return(
             <NavLink
-                to={`/channel/${channel.id}`}
+                to={`/channels/${channel.id}`}
                 exact
                 key={channel.id}
             >
@@ -33,20 +33,28 @@ function Navbar ({channels, setCurrentUser}) {
     return (
         <div className="navbar">
             <img className="navbar-logo" src={process.env.PUBLIC_URL + "/images/logo.jpg"} alt="spreddit" onClick={handleLogoClick}/>
-            {/* only shows when currentuser is set */}
-            <div className="dropdown">
-                <button className="dropbtn">Select a Channel</button>
-                <div className="dropdown-content">
-                    {channelLinks}
+            {currentUser ? 
+            <>
+                <div className="dropdown">
+                    <button className="dropbtn">Select a Channel</button>
+                    <div className="dropdown-content">
+                        {channelLinks}
+                    </div>
                 </div>
-            </div>
+            </> : null}
             <div className="navbar-right">
-                   {/* only shows when currentuser is null */}
-                <NavLink to="/signup" exact>Sign Up</NavLink>
-                <NavLink to="/login" exact>Login</NavLink>
-                   {/* only shows when currentuser is set */}
-                <NavLink to="/profile" exact>Profile</NavLink>
-                <NavLink to="/" exact onClick={handleLogOut}>Logout</NavLink>
+                   {currentUser ? 
+                   <>
+                       <NavLink to="/newpost" exact>Create New Post</NavLink>
+                       <NavLink to="/profile" exact>Profile</NavLink>
+                       <NavLink to="/" exact onClick={handleLogOut}>Logout</NavLink>
+                    </>
+                    : 
+                    <>
+                        <NavLink to="/signup" exact>Sign Up</NavLink>
+                        <NavLink to="/login" exact>Login</NavLink>
+                    </>
+                    }
             </div>
         </div>
     )

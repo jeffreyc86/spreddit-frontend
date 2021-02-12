@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react"
 import{Route, Switch} from 'react-router-dom'
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 import SignUpForm from "./SignUpForm"
 import LoginForm from "./LoginForm"
+import ChannelContainer from "./channel-container/ChannelContainer"
+
 
 function App() {
 
@@ -37,8 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar channels={channels} setCurrentUser={setCurrentUser}/>
-      {currentUser ? <h1>Current User</h1> : <h1>No Current User</h1>}
+      <Navbar channels={channels} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Switch>
         <Route path="/signup">
           <SignUpForm setCurrentUser={setCurrentUser} />
@@ -46,7 +48,12 @@ function App() {
         <Route path="/login">
           <LoginForm setCurrentUser={setCurrentUser} />
         </Route>
+        <Route path="/channels/:id">
+          <ChannelContainer currentUser={currentUser}/>
+        </Route>
+
       </Switch>
+      <Footer />
     </div>
   );
 }

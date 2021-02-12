@@ -123,3 +123,89 @@ code {
   color: #FF4301;
   font-weight: bold;
 }
+
+.footer{
+  height: 40px;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer a{
+  padding: 10px;
+  text-decoration: none;
+}
+
+.footer a:visited{
+  color: #262626;
+}
+
+.footer a:link {
+  color: #262626;
+}
+
+.footer-logo{
+  height: 40px
+}
+
+.channel-banner{
+  height: 130px;
+  background-color: white;
+  border-top: solid #EDEFF1 5px;
+  border-bottom: solid #EDEFF1 5px;
+  border-right: solid #EDEFF1 30px;
+  border-left: solid #EDEFF1 30px;
+}
+
+.channel-info{
+  display: flex;
+  justify-content: left;
+}
+
+.channel-banner-img{
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 15px;
+}
+
+.channel-info h1 {
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  margin-top: 13px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.channel-banner p{
+  font-size: 20px;
+  margin-left: 152px;
+  margin-top: -28px;
+}
+
+.searchbar{
+  margin-top: 15px;
+  height: 50px;
+  display: flex;
+  border-right: solid #EDEFF1 30px;
+  border-left: solid #EDEFF1 30px;
+  background-color: white;
+  justify-content: center;
+}
+
+.searchbar h3{
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.searchbar input{
+  margin-top: 4px;
+  margin-left: 15px;
+  width: 45vw;
+  height: 35px;
+}
+
