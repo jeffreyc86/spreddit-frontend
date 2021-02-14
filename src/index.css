@@ -146,17 +146,18 @@ body {
 .footer{
   height: 40px;
   width: 100vw;
+  padding: 10px;
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
 .footer a{
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
 }
 
@@ -174,7 +175,7 @@ body {
 }
 
 .channel-banner{
-  height: 130px;
+  height: 100px;
   background-color: white;
   border-top: solid #EDEFF1 5px;
   border-bottom: solid #EDEFF1 5px;
@@ -188,30 +189,30 @@ body {
 }
 
 .channel-banner-img{
-  height: 100px;
+  height: 80px;
   border-radius: 50%;
   margin-left: 40px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .channel-info h1 {
   margin: 0;
   padding: 0;
   margin-left: 10px;
-  margin-top: 13px;
-  font-size: 60px;
+  margin-top: 10px;
+  font-size: 45px;
   font-weight: bold;
 }
 
 .channel-banner p{
-  font-size: 20px;
-  margin-left: 152px;
-  margin-top: -28px;
+  font-size: 15px;
+  margin-left: 133px;
+  margin-top: -26px;
 }
 
 .searchbar{
   margin-top: 15px;
-  height: 50px;
+  height: 40px;
   display: flex;
   border-right: solid #EDEFF1 30px;
   border-left: solid #EDEFF1 30px;
@@ -219,7 +220,7 @@ body {
   justify-content: center;
 }
 
-.searchbar h3{
+.searchbar h4{
   padding: 0;
   margin: 0;
   margin-left: 20px;
@@ -227,9 +228,8 @@ body {
 }
 
 .searchbar input{
-  margin-top: 4px;
+  margin-top: 3px;
   margin-left: 15px;
   width: 45vw;
-  height: 35px;
+  height: 28px;
 }
-

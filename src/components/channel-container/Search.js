@@ -5,7 +5,7 @@ function Search({search, setSearch}){
 
     return(
         <div className="searchbar">
-            <h3>Search Posts by Title</h3>
+            <h4>Search Posts by Title</h4>
             <input
                 type="text"
                 placeholder="Enter a Title"
