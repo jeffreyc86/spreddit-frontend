@@ -41,11 +41,13 @@ function Navbar ({channels, currentUser, setCurrentUser}) {
                         {channelLinks}
                     </div>
                 </div>
-            </> : null}
+                <NavLink className="navbar-left" to="/newpost" exact>Create New Post</NavLink>
+                </>
+            : null}
             <div className="navbar-right">
                    {currentUser ? 
                    <>
-                       <NavLink to="/newpost" exact>Create New Post</NavLink>
+                       {/* <NavLink to="/newpost" exact>Create New Post</NavLink> */}
                        <NavLink to="/profile" exact>Profile</NavLink>
                        <NavLink to="/" exact onClick={handleLogOut}>Logout</NavLink>
                     </>

@@ -12,40 +12,41 @@ body {
 
 @font-face {
   font-family: 'VAG Rounded';
-  src: local('VAG Rounded'), url(./fonts/vaglight.ttf) format('truetype');
+  src: local('VAG Rounded') url(./fonts/vaglight.ttf) format('truetype');
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 .navbar{
   background-color: white;
-  height: 60px;
+  height: 35px;
 }
 
 .navbar-logo{
   float: left;
-  width: 180px;
-  margin-top: 4px;
+  height: 33px;
+  margin-top: 1px;
+  margin-bottom: 1px;
   margin-left: 10px;
 }
 
 .dropdown {
   float: left;
+  margin-left: 5px;
   overflow: hidden;
+  color: #262626
 }
 
 .dropdown .dropbtn {
-  font-size: 20px;  
+  font-size: 18px;  
   border: none;
   outline: none;
-  padding: 14px 16px;
+  padding: 7.25px 16px;
   background-color: inherit;
-  font-family: inherit;
   margin: 0;
-  font-size: 25px;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -60,16 +61,14 @@ code {
   min-width: 150px;
   box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
-  padding: 12px 16px;
+  color: #262626;
+  padding: 8px 5px;
   text-decoration: none;
-  /* display: block;
-  text-align: left; */
   display: flex;
   justify-content: left;
 }
@@ -87,8 +86,8 @@ code {
 }
 
 .dropdown-img{
-  height: 45px;
-  width: 45px;
+  height: 38px;
+  width: 38px;
   border-radius: 50%;
   margin-right: 5px;
 }
@@ -98,14 +97,30 @@ code {
   margin-left: 5px;
 }
 
+.navbar-left{
+  padding: 7.25px 16px;
+  font-size: 18px;
+  display: inline-block;
+  text-decoration: none;
+  color: #262626;
+}
+
+.navbar-left a:visited{
+  color: #262626;
+}
+
+.navbar-left a:link {
+  color: #262626;
+}
+
 .navbar-right{
   float: right;
+  display: flex;
 }
 
 .navbar-right a{
-  margin-right: 25px;
-  margin-top: 15px;
-  font-size: 25px;
+  padding: 7.25px 16px;
+  font-size: 18px;
   display: inline-block;
   text-decoration: none;
   color: #262626;
@@ -117,6 +132,10 @@ code {
 
 .navbar-right a:link {
   color: #262626;
+}
+
+.navbar-right a:hover{
+
 }
 
 .errors {
@@ -133,7 +152,11 @@ code {
 }
 
 .footer a{
-  padding: 10px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -146,7 +169,8 @@ code {
 }
 
 .footer-logo{
-  height: 40px
+  height: 30px;
+  padding-top: 5px;
 }
 
 .channel-banner{
