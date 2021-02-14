@@ -56,11 +56,11 @@ function LoginForm ({setCurrentUser}) {
               value={formData.password}
               onChange={handleChange}
             />
+            <input type="submit" value="Login" />
+          </form>
             {errors.map((error, index)=>{
                 return <p key={index} className="errors">{error}</p>
             })}
-            <input type="submit" value="Login" />
-          </form>
         </div>
       );
     
