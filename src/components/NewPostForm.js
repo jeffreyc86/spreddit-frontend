@@ -11,24 +11,25 @@ function NewPostForm({currentUser}) {
     const [channel_id, setChannelId] = useState("")
     const [anonymous, setAnonymous] = useState(false)
     
+    
     const history = useHistory()
 
     function handleSubmit(e){
         e.preventDefault()
 
-        const newPost = { 
-            title,
-            content,
-            channel_id,
-            user_id: currentUser.id,
-            image: image,
-            anonymous
-        }
+        const userId = currentUser.id
+
+        const form = new FormData()
+            form.append("title", title)
+            form.append("content", content)
+            form.append("channel_id", parseInt(channel_id))
+            form.append("user_id", userId)
+            form.append("image", image)
+            form.append("anonymous", anonymous)
 
         fetch(`${API}posts`, {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(newPost)
+            body: form
         })
             .then(res=>res.json())
             .then(newPostObj => {
@@ -53,8 +54,7 @@ function NewPostForm({currentUser}) {
                 <label htmlFor="content">Content</label>
                 <input type="textarea" name="content" value={content} onChange={(e)=>setContent(e.target.value)}/>
                 <label htmlFor="image">Image</label>
-                {/* // cant figure out why this isn't workkinggggg!!!!! // */}
-                <input type="file" name="image" value={image} onChange={(e)=>{setImage(e.target.files[0])}} />
+                <input type="file" name="image" onChange={(e)=>setImage(e.target.files[0])} accept="image/*" />
                 <label htmlFor="anonymous">Post Anonymously?</label>
                 <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
                 <button type="submit">Create Post</button>
