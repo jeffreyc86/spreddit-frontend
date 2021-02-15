@@ -22,11 +22,42 @@ function ChannelContainer({currentUser}){
             })
     },[id])
 
+
+    function addLikeToPost(postId, likeObj) {
+        const newArray = posts.map(post => {
+            if (post.id === postId) {
+                return {
+                    ...post, 
+                    likes: [...post.likes, likeObj]
+                }
+            } else {
+                return post
+            }
+        })
+        setPosts(newArray)
+    }
+
+    function deleteLikeFromPost(postId, likeId){
+        const newArray = posts.map(post => {
+            if (post.id === postId){
+                const likes = post.likes.filter(like => {return like.id !== likeId})
+                return {
+                    ...post, 
+                    likes: likes
+                }
+            } else {
+                return post
+            }
+        })
+        setPosts(newArray)
+    }
+
+
     const filteredPosts = posts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase())
     })
     .map(post => {
-        return <PostCard key={post.id} post={post} />
+        return <PostCard key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost}/>
     })
 
 

@@ -177,10 +177,9 @@ body {
 .channel-banner{
   height: 100px;
   background-color: white;
-  border-top: solid #EDEFF1 5px;
-  border-bottom: solid #EDEFF1 5px;
-  border-right: solid #EDEFF1 30px;
-  border-left: solid #EDEFF1 30px;
+  margin: 5px 30px;
+  border: solid .25px #dedede;
+  border-radius: 3px;
 }
 
 .channel-info{
@@ -208,16 +207,20 @@ body {
   font-size: 15px;
   margin-left: 112px;
   margin-top: -26px;
+  font-weight: 600;
+  color: #7C7C7C;
 }
 
 .searchbar{
   margin-top: 15px;
   height: 40px;
   display: flex;
-  border-right: solid #EDEFF1 30px;
-  border-left: solid #EDEFF1 30px;
+  margin-left: 30px;
+  margin-right: 30px;
   background-color: white;
   justify-content: center;
+  border: solid .25px #dedede;
+  border-radius: 3px;
 }
 
 .searchbar h4{
@@ -235,8 +238,66 @@ body {
 }
 
 .post-card{
-  border: solid black 1px;
+  border: solid .25px #dedede; 
   margin: 20px auto;
-  overflow: auto;
   width: 50vw;
+  height: auto;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.post-card:hover{
+  border: solid .25px black
+}
+
+.post-image{
+  width: 49vw;
+  margin: 5px;
+}
+
+
+.post-author{
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 550;
+  color: #7C7C7C;
+}
+
+.post-title{
+  padding: 0;
+  margin: 0;
+  margin-top: 3px;
+  margin-left: 5px; 
+}
+
+.post-content{
+  padding: 0;
+  margin: 0;
+  margin-top: 3px;
+  margin-left: 5px; 
+  font-size: 13px;
+}
+
+.bottom-post-card {
+  display: flex;
+}
+
+.post-likes-count{
+  padding: 8px;
+  /* margin-bottom: 5px; */
+}
+
+.post-likes-count:hover{
+  background-color: #ddd;
+}
+
+.post-comments-count{
+  padding: 8px;
+}
+
+.post-comments-count:hover{
+  background-color: #ddd;
 }
