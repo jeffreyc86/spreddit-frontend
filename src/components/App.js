@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import SignUpForm from "./SignUpForm"
 import LoginForm from "./LoginForm"
 import ChannelContainer from "./channel-container/ChannelContainer"
+import NewPostForm from "./NewPostForm"
 
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
         <Route path="/channels/:id">
           <ChannelContainer currentUser={currentUser}/>
         </Route>
-
+        <Route path="/newpost">
+          <NewPostForm currentUser={currentUser}/>
+        </Route>
       </Switch>
       <Footer />
     </div>
