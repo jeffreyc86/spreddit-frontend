@@ -6,6 +6,8 @@ import SignUpForm from "./SignUpForm"
 import LoginForm from "./LoginForm"
 import ChannelContainer from "./channel-container/ChannelContainer"
 import NewPostForm from "./NewPostForm"
+import Home from "./Home"
+import PostContainer from "./post-container/PostContainer"
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [channels, setChannels] = useState([])
+  
 
   useEffect(()=>{
     fetch(`${API}channels`)
@@ -54,6 +57,12 @@ function App() {
         </Route>
         <Route path="/newpost">
           <NewPostForm currentUser={currentUser}/>
+        </Route>
+        <Route exact path="/">
+          <Home currentUser={currentUser}/>
+        </Route>
+        <Route path="/posts/:id">
+          <PostContainer currentUser={currentUser}/>
         </Route>
       </Switch>
       <Footer />

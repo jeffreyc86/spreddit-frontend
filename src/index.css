@@ -301,3 +301,55 @@ body {
 .post-comments-count:hover{
   background-color: #ddd;
 }
+
+.post-details{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 70vw;
+}
+
+.pd-channel-info{
+  display: flex;
+  padding: 10px 5px;
+}
+
+.pd-channel-info img{
+  height: 30px;
+  border-radius: 50%;
+}
+
+.pd-channel-info h4{
+  margin: 0;
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+.pd-channel-info p{
+  font-size: 12px;
+  margin: 0;
+  font-weight: 550;
+  color: #7C7C7C;
+  margin-top: 8px;
+  margin-left: 3px;
+}
+
+.pd-info{
+  padding: 0px 10px;
+}
+
+.pd-info h2{
+  margin: 0;
+}
+
+.pd-info p{
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.pd-info img{
+  display: block;
+  margin: 10px auto;
+}
+

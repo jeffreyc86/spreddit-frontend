@@ -1,1 +1,65 @@
-import React from 'react'
+import React, {useState} from 'react'
+
+
+function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost}){
+
+    const API = "http://localhost:3001/"
+
+    const [liked, setLiked] = useState(true)
+
+    // dont understand why it can't get currentUser.id
+    // if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
+    //     setLiked(true)
+    // } else {
+    //     setLiked(false)
+    // }
+
+    function handleLike(){
+        console.log("clicked")
+        if (!liked) {
+
+            fetch(`${API}likes`, {
+                method: 'POST', 
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    user_id: currentUser.id,
+                    post_id: post.id
+                })
+            })
+                .then(res=>res.json())
+                .then(likeObj => {
+                    addLikeToPost(likeObj)
+                })
+        } else {
+            const currentUsersLikeId = post.likes.find(like => like.user_id === currentUser.id).id
+            fetch(`${API}likes/${currentUsersLikeId}`, {
+                method: 'DELETE'
+            })
+            deleteLikeFromPost(currentUsersLikeId)
+        }
+    }
+
+    return(
+        <div className="post-details">
+            <div className="pd-channel-info">
+                <img src={process.env.PUBLIC_URL + post.channel_info.channel_img} alt={post.channel_info.channel_name}/>
+                <h4>{post.channel_info.channel_name} ・ </h4>
+                <p>Posted by {post.anonymous ? "Anonymous" : post.author}</p>
+            </div>
+            <div className="pd-info">
+                <h2>{post.title}</h2>
+                {post.content.length > 0 ? <p>{post.content}</p> : null}
+                {post.image_url.length > 0 ? <img src={post.image_url} alt={post.title}/> : null}
+            </div>
+            <div className="bottom-post-card">
+                <span onClick={handleLike} className="post-likes-count">{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"} 
+                    {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
+                </span>
+                <span className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
+            </div>
+        </div>
+
+    )
+}
+
+export default PostDetails;

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from "react-router-dom"
 
 function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
 
@@ -13,7 +14,7 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
     //     setLiked(false)
     // }
 
-    
+    const history = useHistory()
 
     function handleLike(){
         console.log("clicked")
@@ -43,10 +44,12 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
 
     return (
         <div className="post-card">
-            <p className="post-author">Posted by {post.anonymous ? "Anonymous" : post.author}</p>
-            <h2 className="post-title">{post.title}</h2>
-            {post.content.length > 0 ? <p className="post-content">{post.content}</p> : null}
-            {post.image_url.length > 0 ? <img className="post-image" src={post.image_url} alt={post.title} /> : null}
+            <div onClick={goToPost}>
+                <p className="post-author">Posted by {post.anonymous ? "Anonymous" : post.author}</p>
+                <h2 className="post-title">{post.title}</h2>
+                {post.content.length > 0 ? <p className="post-content">{post.content}</p> : null}
+                {post.image_url.length > 0 ? <img className="post-image" src={post.image_url} alt={post.title} /> : null}
+            </div>
             <div className="bottom-post-card">
                 <span onClick={handleLike} className="post-likes-count">{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"} 
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
