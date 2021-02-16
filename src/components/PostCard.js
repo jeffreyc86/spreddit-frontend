@@ -15,6 +15,11 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
     // }
 
     const history = useHistory()
+    
+    
+    function goToPost(){
+        history.push(`/posts/${post.id}`)
+    }
 
     function handleLike(){
         console.log("clicked")
@@ -54,7 +59,7 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
                 <span onClick={handleLike} className="post-likes-count">{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"} 
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
                 </span>
-                <span className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
+                <span onClick={goToPost} className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
             </div>
         </div>
     )
