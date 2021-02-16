@@ -37,14 +37,34 @@ function PostContainer({currentUser}){
         setPost(newPost)
     }
 
+    function addComment(commentObj){
+        const newArray = [...comments, commentObj]
+        setComments(newArray)
+    }
+
+    function updateComment(updateComObj){
+        const newArray = comments.map(comment => {
+            if (comment.id === updateComObj.id) {
+                return updateComObj
+            } else {
+                return comment
+            }
+        })
+        setComments(newArray)
+    }
+
+    function removeComment(id){
+        const newArray = comments.filter(comment=>{return comment.id !== id})
+        setComments(newArray)
+    }
     
     return(
         <div className="post-container">
             {post ?
             <>
-                <PostDetail currentUser={currentUser} post={post} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost}/>
-                <CommentForm currentUser={currentUser}/>
-                <CommentList />
+                <PostDetail currentUser={currentUser} post={post} comments={comments} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost}/>
+                {post ? <CommentForm currentUser={currentUser} post={post} addComment={addComment} /> : null}
+                <CommentList comments={comments} updateComment={updateComment} removeComment={removeComment} currentUser={currentUser}/>
             </>
             : <h1>Loading...</h1>}
         </div>

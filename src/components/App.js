@@ -8,6 +8,7 @@ import ChannelContainer from "./channel-container/ChannelContainer"
 import NewPostForm from "./NewPostForm"
 import Home from "./Home"
 import PostContainer from "./post-container/PostContainer"
+import ProfileContainer from "./profile-container/ProfileContainer"
 
 
 function App() {
@@ -53,16 +54,19 @@ function App() {
           <LoginForm setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/channels/:id">
-          <ChannelContainer currentUser={currentUser}/>
+          {currentUser ? <ChannelContainer currentUser={currentUser}/> : null}
         </Route>
         <Route path="/newpost">
-          <NewPostForm currentUser={currentUser}/>
+          {currentUser ? <NewPostForm currentUser={currentUser}/> : null}
         </Route>
         <Route exact path="/">
           <Home currentUser={currentUser}/>
         </Route>
         <Route path="/posts/:id">
-          <PostContainer currentUser={currentUser}/>
+          {currentUser ? <PostContainer currentUser={currentUser}/> : null}
+        </Route>
+        <Route path="/profile">
+          {currentUser ? <ProfileContainer currentUser={currentUser}/> : null}
         </Route>
       </Switch>
       <Footer />

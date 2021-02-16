@@ -134,10 +134,6 @@ body {
   color: #262626;
 }
 
-.navbar-right a:hover{
-
-}
-
 .errors {
   color: #FF4301;
   font-weight: bold;
@@ -353,3 +349,18 @@ body {
   margin: 10px auto;
 }
 
+.comment-form{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 70vw;
+}
+
+.comment-list{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 70vw;
+}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useHistory} from "react-router-dom"
 
 function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
@@ -7,24 +7,19 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
 
     const [liked, setLiked] = useState(false)
 
-    // dont understand why it can't get currentUser.id
-    // if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
-    //     setLiked(true)
-    // } else {
-    //     setLiked(false)
-    // }
+    useEffect(()=> {
+        if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
+            setLiked(true)
+        } else {
+            setLiked(false)
+        }
+    }, [])
 
     const history = useHistory()
     
-    
-    function goToPost(){
-        history.push(`/posts/${post.id}`)
-    }
-
     function handleLike(){
-        console.log("clicked")
+        setLiked(liked=>!liked)
         if (!liked) {
-
             fetch(`${API}likes`, {
                 method: 'POST', 
                 headers: {"Content-Type": "application/json"},
@@ -33,10 +28,10 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
                     post_id: post.id
                 })
             })
-                .then(res=>res.json())
-                .then(likeObj => {
-                    addLikeToPost(post.id, likeObj)
-                })
+            .then(res=>res.json())
+            .then(likeObj => {
+                addLikeToPost(post.id, likeObj)
+            })
         } else {
             const currentUsersLikeId = post.likes.find(like => like.user_id === currentUser.id).id
             fetch(`${API}likes/${currentUsersLikeId}`, {
@@ -45,8 +40,11 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
             deleteLikeFromPost(post.id, currentUsersLikeId)
         }
     }
-
-
+    
+    function goToPost(){
+        history.push(`/posts/${post.id}`)
+    }
+    
     return (
         <div className="post-card">
             <div onClick={goToPost}>

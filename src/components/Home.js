@@ -28,7 +28,7 @@ function Home({currentUser}){
         <div className="home">
             <div className="home-description">
                 <h1>Description!</h1>
-                <img src="" alt="Cool Image"></img>
+                <img src="" alt="home page photo"></img>
                 <p>{quote}</p>
                 <p> - {quoteAuthor}</p>
             </div>

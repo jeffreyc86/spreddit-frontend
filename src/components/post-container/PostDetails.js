@@ -1,23 +1,23 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
-function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost}){
+function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comments}){
 
     const API = "http://localhost:3001/"
 
     const [liked, setLiked] = useState(true)
 
-    // dont understand why it can't get currentUser.id
-    // if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
-    //     setLiked(true)
-    // } else {
-    //     setLiked(false)
-    // }
+    useEffect(()=> {
+        if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
+            setLiked(true)
+        } else {
+            setLiked(false)
+        }
+    }, [])
 
     function handleLike(){
-        console.log("clicked")
+        setLiked(liked=>!liked)
         if (!liked) {
-
             fetch(`${API}likes`, {
                 method: 'POST', 
                 headers: {"Content-Type": "application/json"},
@@ -55,7 +55,7 @@ function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost}){
                 <span onClick={handleLike} className="post-likes-count">{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"} 
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
                 </span>
-                <span className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
+                <span className="post-comments-count">{comments.length} {comments.length === 1 ? "Comment" : "Comments"}</span>
             </div>
         </div>
 
