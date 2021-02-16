@@ -34,13 +34,15 @@ function CommentForm({currentUser, post, addComment}){
     return (
         <div>
             <form className="comment-form" onSubmit={handleSubmit}>
-                <label htmlFor="new-comment">Comment</label>
-                <input type="textarea" name="comment" value={comment} onChange={(e)=>setComment(e.target.value)} required/>
-                <label htmlFor="anonymous">Post Anonymously?</label>
-                <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
-                <button type="submit">Create Comment</button>
+                <label htmlFor="new-comment">Leave a Comment</label>
+                <br/>
+                <textarea className="comment-area" type="text" name="comment" row="7" value={comment} onChange={(e)=>setComment(e.target.value)} placeholder="What are your thoughts?"required/>
+                <div className="comment-form-bottom">
+                    <label htmlFor="anonymous">Post Anonymously?</label>
+                    <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
+                    <button type="submit">Create Comment</button>
+                </div>
             </form>
-
         </div>
     )
 }

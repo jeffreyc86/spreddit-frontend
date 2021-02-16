@@ -27,12 +27,15 @@ function CommentCard({comment, currentUser, updateComment, removeComment}){
 
         return(
             <div className="update-comment-form">
-                <form onSubmit={handleSubmit}> 
-                    <label htmlFor="new-comment">Comment</label>
-                    <input type="textarea" name="comment" value={newComment} onChange={(e)=>setNewComment(e.target.value)} placeholder={comment.comment} required/>
-                    <label htmlFor="anonymous">Post Anonymously?</label>
-                    <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
-                    <button type="submit">Update Comment</button>
+                <form className="comment-form" onSubmit={handleSubmit}> 
+                    <label htmlFor="new-comment">Update Your Comment</label>
+                    <br/>
+                    <textarea className="comment-area" type="text" name="comment" value={newComment} onChange={(e)=>setNewComment(e.target.value)} placeholder={comment.comment} required/>
+                    <div className="comment-form-bottom">
+                        <label htmlFor="anonymous">Post Anonymously?</label>
+                        <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
+                        <button type="submit">Update</button>
+                    </div>
                 </form>
             </div>
         )
@@ -48,14 +51,16 @@ function CommentCard({comment, currentUser, updateComment, removeComment}){
 
     return (
         <div className="comment-card">
-            <p>Posted by {comment.anonymous ? "Anonymous" : comment.author}</p>
-            <p>{comment.comment}</p>
+            <div className="cc-border">
+            <p className="cc-author">Posted by {comment.anonymous ? "Anonymous" : comment.author}</p>
+            <p className="cc-comment">{comment.comment}</p>
             {comment.user_id === currentUser.id ? 
-                <div>
-                    <button onClick={()=>setShowForm(state=>!state)}>{showForm ? "Nevermind" : "Update Comment"}</button> 
+                <div className="cc-buttons">
                     {showForm ? <UpdateCommentForm />: null}
+                    <button onClick={()=>setShowForm(state=>!state)}>{showForm ? "Nevermind" : "Update Comment"}</button> 
                     <button onClick={handleDelete}>Delete Comment</button> 
                 </div> : null}
+            </div>
         </div>
     )
 }

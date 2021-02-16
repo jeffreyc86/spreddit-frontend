@@ -15,10 +15,12 @@ body {
   src: local('VAG Rounded') url(./fonts/vaglight.ttf) format('truetype');
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* * input[type="checkbox"]:checked{
+  color: #FF4301;
 } */
+
+
+/* **************NAVBAR************** */
 
 .navbar{
   background-color: white;
@@ -139,9 +141,12 @@ body {
   font-weight: bold;
 }
 
+/* **************FOOTER************** */
+
 .footer{
   height: 40px;
   width: 100vw;
+  margin-left: -13px;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -169,6 +174,8 @@ body {
   height: 30px;
   padding-top: 5px;
 }
+
+/* **************CHANNEL CONTAINER************** */
 
 .channel-banner{
   height: 100px;
@@ -233,6 +240,8 @@ body {
   height: 28px;
 }
 
+/* **************POSTCARD************** */
+
 .post-card{
   border: solid .25px #dedede; 
   margin: 20px auto;
@@ -250,7 +259,6 @@ body {
   width: 49vw;
   margin: 5px;
 }
-
 
 .post-author{
   padding: 0;
@@ -298,12 +306,18 @@ body {
   background-color: #ddd;
 }
 
+/* **************POST DETAILS CONTAINER************** */
+
 .post-details{
   border: solid .25px #dedede; 
   border-radius: 3px;
   background-color: white;
   margin: 10px auto;
   width: 70vw;
+}
+
+.post-details:hover{
+  border: solid .25px black
 }
 
 .pd-channel-info{
@@ -355,6 +369,56 @@ body {
   background-color: white;
   margin: 10px auto;
   width: 70vw;
+  padding-top: 5px;
+  
+}
+
+.comment-form:hover{
+  border: solid .25px black
+}
+
+.comment-area{
+  display: block;
+  margin: 5px auto;
+  width: 65vw;
+  font-family: inherit;
+  margin-bottom: 8px;
+}
+
+.comment-form label{
+  margin: 5px 5px;
+}
+
+.comment-form-bottom{
+  padding: 5px;
+  background-color: #F6F7F8;
+}
+
+.comment-form-bottom label{
+  display: inline-block;
+  font-size: 13px;
+}
+.comment-form-bottom input{
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.comment-form-bottom button{
+  display: block;
+  float: right;
+  font-weight: 525;
+  margin-top: 3px;
+  margin-right: 3px;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 3px 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.comment-form-bottom button:hover{
+  background-color: #FF4301;
 }
 
 .comment-list{
@@ -363,4 +427,135 @@ body {
   background-color: white;
   margin: 10px auto;
   width: 70vw;
+  padding: 5px;
+}
+
+.comment-list:hover{
+  border: solid .25px black;
+}
+
+.cl-banner{
+  display: flex;
+}
+
+.comment-list h2{
+  margin: 0;
+  margin-top: -3.6px;
+  margin-left: 3px;
+  padding: 0;
+}
+
+.comment-logo{
+  height: 24px;
+}
+
+.comment-card{
+  padding: 10px;
+}
+
+.cc-border{
+  border-left: solid 1px #7C7C7C;
+  padding: 5px
+}
+
+.cc-author{
+  margin: 0;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 550;
+  color: #7C7C7C;
+
+}
+
+.cc-comment{
+  margin: 0;
+  padding: 0px 5px 0px 5px;
+  margin-left: 3px;
+}
+
+.cc-buttons{
+  margin-top: 5px;
+}
+
+.cc-buttons form{
+  width: inherit;
+}
+
+.cc-buttons button{
+  font-weight: 525;
+  margin-top: 3px;
+  margin-right: 3px;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 3px 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.cc-buttons button:hover{
+  background-color: #FF4301;
+}
+
+/* **************NEW POST FORM************** */
+.new-post{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 50vw;
+  padding: 30px;
+  text-align: center;
+}
+
+.np-image{
+  height: 190px;
+}
+
+.new-post:hover{
+  border: solid .25px black;
+}
+
+.post-form{
+  padding-top: 20px;
+}
+
+.post-form label{
+  font-weight: bold;
+}
+
+.post-form select{
+  margin-left: 8px;
+}
+
+.post-form input{
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.post-form textarea{
+  margin-top: 5px;
+  width: 30vw;
+}
+
+.post-form button{
+  margin-top: 3px;
+  margin-right: 3px;
+  font-weight: 525;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.post-form button:hover{
+  background-color: #FF4301;
+}
+
+.pf-input input:checked{
+  background-color: #FF4301;
 }

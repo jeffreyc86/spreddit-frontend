@@ -9,7 +9,10 @@ function CommentList ({currentUser, updateComment, removeComment, comments}) {
 
     return ( 
         <div className="comment-list">
-            <h1>comment list</h1>
+            <div className="cl-banner">
+                <img className="comment-logo" src={process.env.PUBLIC_URL + "/images/comments.jpg"} alt="comments" />
+                <h2>Comments</h2>
+            </div>
             {commentCards}
         </div>
 
