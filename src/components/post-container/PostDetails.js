@@ -16,7 +16,7 @@ function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comm
         } else {
             setLiked(false)
         }
-    }, [])
+    }, [post, currentUser.id])
 
     function handleLike(){
         setLiked(liked=>!liked)

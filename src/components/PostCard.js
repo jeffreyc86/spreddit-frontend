@@ -13,7 +13,7 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deleteP
         } else {
             setLiked(false)
         }
-    }, [post])
+    }, [post, currentUser.id])
 
     const history = useHistory()
     

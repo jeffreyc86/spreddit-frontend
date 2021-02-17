@@ -8,7 +8,7 @@ function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, d
         const newComments = post.comments.filter(comment => {return comment.created_today}).length
 
         return (
-            <div className="users-post-card">
+            <div key={post.id} className="users-post-card">
                 <div className="up-stats">
                     <p>{newLikes} New {newLikes === 1 ? "Like" : "Likes"} in the past day</p>
                     <p>{newComments} New {newComments === 1 ? "Comment" : "Comments"} in the past day</p>

@@ -9,7 +9,7 @@ function Home({currentUser}){
     const history = useHistory()
     
     useEffect(()=>{
-        const quoteTags = ['faith', 'famous-quotes', 'friendship','happiness','inspirational','life','future','love','proverbs','success','wisdom','technology']
+        const quoteTags = ['faith', 'famous-quotes', 'friendship','happiness','inspirational','life','future','love','proverb','success','wisdom','technology']
         const tag = Math.floor(Math.random() * quoteTags.length)
         
         fetch(`https://api.quotable.io/random?tags=${quoteTags[tag]}`)
@@ -28,7 +28,7 @@ function Home({currentUser}){
         <div className="home">
             <div className="home-description">
                 <h1>Description!</h1>
-                <img src="" alt="home page photo"></img>
+                <img src="" alt="welcome"></img>
                 <p>{quote}</p>
                 <p> - {quoteAuthor}</p>
             </div>

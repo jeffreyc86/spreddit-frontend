@@ -17,7 +17,7 @@ function ProfileContainer({currentUser}) {
             const currentUsersPosts = postsObjs.filter(post=>{return post.user_id === currentUser.id})
             setUserPosts(currentUsersPosts)
         })
-    },[])
+    },[currentUser.id])
 
     function addLikeToPost(postId, likeObj) {
         const newTrendingPostsArray = trendingPosts.map(post => {

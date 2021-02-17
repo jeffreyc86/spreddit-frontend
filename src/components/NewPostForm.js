@@ -44,7 +44,7 @@ function NewPostForm({currentUser}) {
                 <div className="pf-input">
                     <label htmlFor="channel">Channel</label>
                     <select value={channel_id} onChange={(e)=>setChannelId(parseInt(e.target.value))}>
-                        <option value="" disabled selected>Select a Channel</option>
+                        <option value="" disabled defaultValue>Select a Channel</option>
                         <option value="1">Quarantine Memes</option>
                         <option value="2">Pandemic 15++</option>
                         <option value="3">Covid ProTips</option>
