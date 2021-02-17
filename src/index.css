@@ -600,6 +600,7 @@ body {
   border-radius: 3px;
   width: 80vw;
   display: flex;
+  justify-content: space-between;
 }
 
 .pc-banner:hover{
@@ -615,6 +616,80 @@ body {
   margin: 25px;
   margin-top: 19px;
   font-size: 50px;
+}
+
+.settings img{
+  height: 60px;
+  margin: 20px;
+}
+
+.account-settings{
+  background-color: white;
+  margin: 5px auto;
+  border: solid .25px #dedede;
+  border-radius: 3px;
+  width: 80vw;
+  text-align: center;
+}
+
+.account-settings:hover{
+  border: solid .25px black;
+}
+
+.account-settings h1{
+  margin-bottom: 10px;
+}
+
+.update-form label{
+  font-weight: bold;
+}
+
+.update-form input{
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+.account-settings h3{
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FF4301;
+}
+
+.account-settings button{;
+  margin: 0 auto;
+  font-weight: 525;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.account-settings button:hover{
+  background-color: #FF4301;
+}
+
+.blink{
+  margin-top: 10px;
+  animation: blinker 0.8s linear infinite;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.uuf-delete button:hover{
+  padding: 20px 40px;
+  background-color: red;
+  border: .25px solid black;
+  font-weight: bold;
+  font-size: 40px
 }
 
 /* **************TRENDING POSTS************** */
@@ -662,6 +737,7 @@ body {
   background-color: white;
   border: solid .25px #dedede;
   display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -676,9 +752,27 @@ body {
   margin-left: -13px;
 }
 
+.up-banner button{
+  text-decoration: none;
+  color: #F9F9FA;
+  margin-right: 20px;
+  margin-top: 17px;
+  background-color: rgb(152, 152, 152);
+  height: 30px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.up-banner button:hover{
+  background-color: #FF4301;
+}
+
+.no-user-posts {
+  margin: 20px;
+}
 .users-post-card{
   padding-top: 10px;
-  
 }
 
 .up-stats{
@@ -697,6 +791,7 @@ body {
   text-align: right;
   color: #FF4301;
 }
+
 
 /* **************SIGN UP FORM************** */
 .sign-up-div{

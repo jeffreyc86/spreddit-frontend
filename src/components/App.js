@@ -66,7 +66,7 @@ function App() {
           {currentUser ? <PostContainer currentUser={currentUser}/> : null}
         </Route>
         <Route path="/profile">
-          {currentUser ? <ProfileContainer currentUser={currentUser}/> : null}
+          {currentUser ? <ProfileContainer currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}
         </Route>
       </Switch>
       <Footer />

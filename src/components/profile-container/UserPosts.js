@@ -1,7 +1,10 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import PostCard from "../PostCard"
 
 function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
+
+    const history = useHistory()
 
     const postsArr = userPosts.map((post) => {
         const newLikes = post.likes.filter(like => {return like.created_today}).length
@@ -18,13 +21,23 @@ function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, d
             )
     })
 
+    function createPost(){
+        history.push("/newpost")
+    }
+
     return(
         <div className="user-posts">
             <div className="up-banner">
-                <h2>Your Posts</h2>
-                <img src={process.env.PUBLIC_URL + "/images/userpost.jpg"} alt="trending" />
+                <div style={{display: "flex"}}>
+                    <h2>Your Posts</h2>
+                    <img src={process.env.PUBLIC_URL + "/images/userpost.jpg"} alt="trending" />
+                </div>
+                <button onClick={createPost}>Create New Post</button>
             </div>
-            {postsArr}
+            {postsArr.length > 0 ? postsArr : 
+                <div className="no-user-posts">
+                    <h3>hmm...you haven't posted anything yet.</h3>
+                </div>}
         </div>
     )
 }

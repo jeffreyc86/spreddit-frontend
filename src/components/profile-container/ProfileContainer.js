@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import UserPosts from "./UserPosts"
 import TrendingPosts from "./TrendingPosts"
+import UpdateUserForm from "./UpdateUserForm"
 
 
-function ProfileContainer({currentUser}) {
+function ProfileContainer({currentUser, setCurrentUser}) {
 
     const [trendingPosts, setTrendingPosts] = useState([])
     const [userPosts, setUserPosts] = useState([])
+    const [showHidden, setShowHidden] = useState(false)
+    
     const API = "http://localhost:3001/"
 
     useEffect(() => {
@@ -84,9 +87,15 @@ function ProfileContainer({currentUser}) {
     return (
         <div className="profile-container">
             <div className="pc-banner">
-                <img src={process.env.PUBLIC_URL + "/images/welcome.gif"} alt="welcome" />
-                <h1>Welcome, {currentUser.username}!</h1>
+                <div style={{display: "flex"}}>
+                    <img src={process.env.PUBLIC_URL + "/images/welcome.gif"} alt="welcome" />
+                    <h1>Welcome, {currentUser.username}!</h1>
+                </div>
+                <div className="settings">
+                    <img onClick={()=>{setShowHidden(showHidden=>!showHidden)}}src={process.env.PUBLIC_URL + "/images/settings.jpg"} alt="settings" />
+                </div>
             </div>
+            {showHidden ? <UpdateUserForm currentUser={currentUser} setShowHidden={setShowHidden} setCurrentUser={setCurrentUser}/> : null }
             <TrendingPosts trendingPosts={trendingPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
             <UserPosts userPosts={userPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
         </div>
