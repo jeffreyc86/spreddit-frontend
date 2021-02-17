@@ -44,15 +44,24 @@ function SignUpForm ({setCurrentUser}){
     }
 
     return(
-        <div>
-            <h1>Sign Up Here</h1>
+        <div className="sign-up-div">
+            <img className="np-image" src={process.env.PUBLIC_URL + "/images/signup.jpg"} alt="sign up form" />
             <form className="signup-form" onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                <label htmlFor="password">Enter Password</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <label htmlFor="password">Re-Enter Password</label>
-                <input type="password" value={confirmedPassword} onChange={(e) => setConfirmedPassword(e.target.value)} />
+                <div className="sf-input">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                </div>
+                <br/>
+                <div className="sf-input">
+                    <label htmlFor="password">Enter Password</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                <br/>
+                <div className="sf-input">
+                    <label htmlFor="password">Re-Enter Password</label>
+                    <input type="password" value={confirmedPassword} onChange={(e) => setConfirmedPassword(e.target.value)} />
+                </div>
+                <br/>
                 <button type="submit">Create Account</button>
             </form>
             {errors.map((error, index)=>{

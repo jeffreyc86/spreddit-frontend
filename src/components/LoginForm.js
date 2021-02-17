@@ -39,24 +39,31 @@ function LoginForm ({setCurrentUser}) {
       }
     
       return (
-        <div>
+        <div className="login-div">
+        <h1>Loggin'</h1>
+        <img src={process.env.PUBLIC_URL + "/images/login.gif"} alt="login" />
           <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
-            <h1>Login</h1>
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <input type="submit" value="Login" />
+            <div>
+                <label htmlFor="username">Username</label>
+                <input
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                />
+            </div>
+            <br/>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                />
+            </div>
+            <br/>
+            <button type="submit">Login</button>
           </form>
             {errors.map((error, index)=>{
                 return <p key={index} className="errors">{error}</p>

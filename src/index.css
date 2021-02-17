@@ -576,9 +576,9 @@ body {
   background-color: #FF4301;
 }
 
-.pf-input input:checked{
+/* .pf-input input:checked{
   background-color: #FF4301;
-}
+} */
 
 
 /* **************PROFILE CONTAINER************** */
@@ -602,4 +602,118 @@ body {
   font-weight: 550;
   text-align: right;
   color: #FF4301;
+}
+
+/* **************SIGN UP FORM************** */
+.sign-up-div{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 50vw;
+  padding: 30px;
+  text-align: center;
+}
+
+.sign-up-div:hover{
+  border: solid .25px black; 
+}
+
+.sign-up-div label{
+  font-weight: bold;
+}
+
+.sign-up-div input{
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+.signup-form{
+  margin-top: 20px;
+}
+
+.signup-form button{
+  margin-top: 3px;
+  margin-right: 3px;
+  font-weight: 525;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.signup-form button:hover{
+  background-color: #FF4301;
+}
+
+/* **************LOGIN FORM************** */
+.login-div{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 50vw;
+  padding: 30px;
+  text-align: center;
+}
+
+.login-div:hover{
+  border: solid .25px black; 
+}
+
+.login-div h1{
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.login-div img{
+  width: 20vw;
+}
+
+.login-div label{
+  font-weight: bold;
+}
+
+.login-div input{
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+.login-form{
+  margin-top: 20px;
+}
+
+.login-form button{
+  margin-top: 3px;
+  margin-right: 3px;
+  font-weight: 525;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.login-form button:hover{
+  background-color: #FF4301;
+}
+
+/* **************HOME************** */
+.home{
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+  background-color: white;
+  margin: 10px auto;
+  width: 85vw;
+  padding: 30px;
+  text-align: center;
+}
+
+.home:hover{
+  border: solid .25px black; 
 }
