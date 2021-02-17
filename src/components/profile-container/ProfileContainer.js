@@ -82,8 +82,11 @@ function ProfileContainer({currentUser}) {
     }
 
     return (
-        <div>
-            <h1>Welcome, {currentUser.username}!</h1>
+        <div className="profile-container">
+            <div className="pc-banner">
+                <img src={process.env.PUBLIC_URL + "/images/welcome.gif"} alt="welcome" />
+                <h1>Welcome, {currentUser.username}!</h1>
+            </div>
             <TrendingPosts trendingPosts={trendingPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
             <UserPosts userPosts={userPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
         </div>

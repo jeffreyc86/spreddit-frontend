@@ -10,7 +10,10 @@ function TrendingPosts ({trendingPosts, currentUser, addLikeToPost, deleteLikeFr
 
     return(
         <div className="trending-posts">
-            <h3>Trending Posts</h3>
+            <div className="tp-banner">
+                <h2>Trending Posts</h2>
+                <img src={process.env.PUBLIC_URL + "/images/trending.jpg"} alt="trending" />
+            </div>
             {postsArr}
         </div>
     )

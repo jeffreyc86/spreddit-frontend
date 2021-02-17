@@ -146,7 +146,7 @@ body {
 .footer{
   height: 40px;
   width: 100vw;
-  margin-left: -13px;
+  margin-left: -14px;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -183,6 +183,10 @@ body {
   margin: 5px 30px;
   border: solid .25px #dedede;
   border-radius: 3px;
+}
+
+.channel-banner:hover{
+  border: solid .25px black;
 }
 
 .channel-info{
@@ -224,6 +228,10 @@ body {
   justify-content: center;
   border: solid .25px #dedede;
   border-radius: 3px;
+}
+
+.searchbar:hover{
+  border: solid .25px black;
 }
 
 .searchbar h4{
@@ -582,6 +590,90 @@ body {
 
 
 /* **************PROFILE CONTAINER************** */
+.pc-banner{
+  height: 100px;
+  background-color: white;
+  margin: 5px auto;
+  border: solid .25px #dedede;
+  border-radius: 3px;
+  width: 80vw;
+  display: flex;
+}
+
+.pc-banner:hover{
+  border: solid .25px black;
+}
+
+.pc-banner img{
+  height: inherit;
+}
+
+.pc-banner h1{
+  padding: 0;
+  margin: 25px;
+  margin-top: 19px;
+  font-size: 50px;
+}
+
+/* **************TRENDING POSTS************** */
+
+.trending-posts{
+  margin: 20px auto;
+  border: solid .25px #dedede;
+  width: 80vw;
+}
+
+.trending-posts:hover{
+  border: solid .25px black;
+}
+
+.tp-banner{
+  background-color: white;
+  border: solid .25px #dedede;
+  display: flex;
+}
+
+.tp-banner h2{
+  padding: 20px;
+  margin: 0;
+}
+
+.tp-banner img{
+  margin-top: 17px;
+  height: 30px;
+  margin-left: -15px;
+}
+
+/* **************USER POSTS************** */
+
+.user-posts{
+  margin: 20px auto;
+  border: solid .25px #dedede;
+  width: 80vw;
+}
+
+.user-posts:hover{
+  border: solid .25px black;
+}
+
+.up-banner{
+  background-color: white;
+  border: solid .25px #dedede;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.up-banner h2{
+  padding: 20px;
+  margin: 0;
+}
+
+.up-banner img{
+  margin-top: 14px;
+  height: 35px;
+  margin-left: -13px;
+}
+
 .users-post-card{
   padding-top: 10px;
   

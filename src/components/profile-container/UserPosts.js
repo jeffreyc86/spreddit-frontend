@@ -20,7 +20,10 @@ function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, d
 
     return(
         <div className="user-posts">
-            <h3>User Posts</h3>
+            <div className="up-banner">
+                <h2>Your Posts</h2>
+                <img src={process.env.PUBLIC_URL + "/images/userpost.jpg"} alt="trending" />
+            </div>
             {postsArr}
         </div>
     )
