@@ -145,8 +145,10 @@ body {
 
 .footer{
   height: 40px;
-  width: 100vw;
-  margin-left: -14px;
+  width: 90vw;
+  margin: auto;
+  margin-left: 4.5vw;
+  margin-right: 5vw;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -800,8 +802,8 @@ body {
   border-top: solid .25px #dedede; 
   border-bottom: solid .25px #dedede; 
   background-color: white;
-  margin: 10px auto;
-  width: 100vw;
+  margin: 10px 0;
+  /* width: 100vw; */
   padding: 30px 0px;
   text-align: center;
 }
@@ -809,22 +811,78 @@ body {
 .home-banner{
   background-color: #eb5825;
   display: flex;
+  height: 35vw;
 }
 
 .home-banner img{
-  margin-left: 10vw;
+  margin-left: 9vw;
   height: 35vw;
   float: left;
 }
 
 .home-description{
-  display: block;
   text-align: center;
+  height: 35vw;
 }
 
 .home-description h1{
   padding: 0;
   margin: 0;
   color: white;
-  font-size: 50px;
+  font-size: 4vw;
 }
+
+.home-quote{
+  padding: 0;
+  margin-top: 11vw;
+  margin-left: 1vw;
+}
+
+.random-quote h4{
+  font-family: VAG Rounded;
+  margin-bottom: 8px;
+}
+
+.random-quote img{
+  height: 15px;
+  margin: 0;
+}
+
+.quote-div{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.quote{
+  margin: 0;
+  padding: 5px;
+  padding-bottom: 0;
+  font-style: italic;
+}
+
+.quote-author{
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.home-signup{
+  margin: 0;
+}
+
+.home-signup h1{
+  font-size: 3vw;
+  width: 32vw;
+  margin: 0 auto;
+  padding: 5px;
+  margin-top: 2vw;
+  border: solid .25px #dedede; 
+  border-radius: 3px;
+}
+
+.home-signup h1:hover{
+  border: solid 2px #ff4301; 
+}
+
+
