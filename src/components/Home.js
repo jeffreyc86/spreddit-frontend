@@ -27,8 +27,14 @@ function Home({currentUser}){
     return(
         <div className="home">
             <div className="home-description">
-                <h1>Description!</h1>
-                <img src="" alt="welcome"></img>
+                <div className="home-banner">
+                    <img src={process.env.PUBLIC_URL + "/images/homebanner.png"} alt="home"></img>
+                    <div className="home-description">
+                        <h1>A Global Community of</h1>
+                        <h1>Like Minded Humans</h1>
+                        <h1>Socially Distancing</h1>
+                    </div>
+                </div>
                 <p>{quote}</p>
                 <p> - {quoteAuthor}</p>
             </div>
