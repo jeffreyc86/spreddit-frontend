@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from "react-router-dom"
 
-function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
+function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
 
     const API = "http://localhost:3001/"
 
@@ -44,6 +44,13 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
     function goToPost(){
         history.push(`/posts/${post.id}`)
     }
+
+    function deletePost(){
+        fetch(`${API}posts/${post.id}`, {
+            method: 'DELETE'
+        })
+        deletePostFromArray(post.id)
+    }
     
     return (
         <div className="post-card">
@@ -58,6 +65,7 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost}){
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
                 </span>
                 <span onClick={goToPost} className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
+                {post.user_id === currentUser.id ? <button className="pc-delete-button" onClick={deletePost}>Delete Post</button> : null }
             </div>
         </div>
     )

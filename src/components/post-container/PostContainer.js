@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import PostDetail from "./PostDetails"
+import PostDetails from "./PostDetails"
 import CommentList from "./CommentList"
 import CommentForm from "./CommentForm"
 
@@ -57,12 +57,14 @@ function PostContainer({currentUser}){
         const newArray = comments.filter(comment=>{return comment.id !== id})
         setComments(newArray)
     }
+
+ 
     
     return(
         <div className="post-container">
             {post ?
             <>
-                <PostDetail currentUser={currentUser} post={post} comments={comments} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost}/>
+                <PostDetails currentUser={currentUser} post={post} comments={comments} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} />
                 {post ? <CommentForm currentUser={currentUser} post={post} addComment={addComment} /> : null}
                 <CommentList comments={comments} updateComment={updateComment} removeComment={removeComment} currentUser={currentUser}/>
             </>

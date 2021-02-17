@@ -13,7 +13,7 @@ function CommentList ({currentUser, updateComment, removeComment, comments}) {
                 <img className="comment-logo" src={process.env.PUBLIC_URL + "/images/comments.jpg"} alt="comments" />
                 <h2>Comments</h2>
             </div>
-            {commentCards}
+            {comments.length > 0 ? commentCards : <p>No comments yet. Be the first to share what you think!</p>}
         </div>
 
     )

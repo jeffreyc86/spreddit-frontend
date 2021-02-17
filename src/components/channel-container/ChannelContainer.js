@@ -52,12 +52,16 @@ function ChannelContainer({currentUser}){
         setPosts(newArray)
     }
 
+    function deletePostFromArray(postId) {
+        const newArray = posts.filter(post => {return post.id !== postId})
+        setPosts(newArray)
+    }
 
     const filteredPosts = posts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase())
     })
     .map(post => {
-        return <PostCard key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost}/>
+        return <PostCard key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
     })
 
 

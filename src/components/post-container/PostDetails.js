@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 
 
 function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comments}){
@@ -6,6 +7,8 @@ function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comm
     const API = "http://localhost:3001/"
 
     const [liked, setLiked] = useState(true)
+
+    const history = useHistory()
 
     useEffect(()=> {
         if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
@@ -39,6 +42,13 @@ function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comm
         }
     }
 
+    function deletePost(){
+        fetch(`${API}posts/${post.id}`, {
+            method: 'DELETE'
+        })
+        history.push("/profile")
+    }
+
     return(
         <div className="post-details">
             <div className="pd-channel-info">
@@ -56,6 +66,7 @@ function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comm
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
                 </span>
                 <span className="post-comments-count">{comments.length} {comments.length === 1 ? "Comment" : "Comments"}</span>
+                {post.user_id === currentUser.id ? <button className="pc-delete-button" onClick={deletePost}>Delete Post</button> : null }
             </div>
         </div>
 
