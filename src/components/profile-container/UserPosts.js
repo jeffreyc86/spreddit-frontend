@@ -13,8 +13,8 @@ function UserPosts({userPosts, editPost, currentUser, addLikeToPost, deleteLikeF
         return (
             <div key={post.id} className="users-post-card">
                 <div className="up-stats">
-                    <p>{newLikes} New {newLikes === 1 ? "Like" : "Likes"} in the past day</p>
-                    <p>{newComments} New {newComments === 1 ? "Comment" : "Comments"} in the past day</p>
+                    <p>{newLikes} New {newLikes === 1 ? "Like" : "Likes"} & {newComments} New {newComments === 1 ? "Comment" : "Comments"} in the past day</p>
+                    <br/>
                 </div>
                 <PostCard key={post.id} post={post} editPost={editPost} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
             </div>

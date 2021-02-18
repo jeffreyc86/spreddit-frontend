@@ -60,7 +60,7 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deleteP
                 <p className="post-author">Posted by {post.anonymous ? "Anonymous" : post.author}</p>
                 <h2 className="post-title">{post.title}</h2>
                 {post.content.length > 0 ? <p className="post-content">{post.content}</p> : null}
-                {post.image_url.length > 0 ? <img className="post-image" src={post.image_url} alt={post.title} /> : null}
+                {post.image_url.length > 0 ? <img className="post-image" src={post.image_url} alt={post.title} /> : <br/>}
             </div>
             <div className="bottom-post-card">
                 <span onClick={handleLike} className="post-likes-count">{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"} 
