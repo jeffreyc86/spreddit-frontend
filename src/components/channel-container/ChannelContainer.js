@@ -84,7 +84,7 @@ function ChannelContainer({currentUser}){
                 <Search search={search} setSearch={setSearch} />
             </>
             : <h1>Loading...</h1>}
-            {filteredPosts}
+            {filteredPosts.length > 0 ? filteredPosts : <h1 style={{textAlign: "center"}}>Sorry...no posts to this channel yet</h1>}
         </div>
     )
 }
