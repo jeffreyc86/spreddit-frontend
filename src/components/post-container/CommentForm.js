@@ -5,7 +5,7 @@ function CommentForm({currentUser, post, addComment}){
     const [comment, setComment] = useState("")
     const [anonymous, setAnonymous] = useState(false)
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     function handleSubmit(e){
         e.preventDefault()

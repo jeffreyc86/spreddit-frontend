@@ -7,7 +7,7 @@ import PostCard from "../PostCard"
 function ChannelContainer({currentUser}){
 
     const {id} = useParams()
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [channel, setChannel] = useState(null)
     const [search, setSearch] = useState("")

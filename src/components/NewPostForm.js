@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 
 function NewPostForm({currentUser}) {
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [image, setImage] = useState(null)
     const [title, setTitle] = useState("")

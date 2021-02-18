@@ -7,7 +7,7 @@ import CommentForm from "./CommentForm"
 function PostContainer({currentUser}){
 
     const {id} = useParams()
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState([])

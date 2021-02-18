@@ -10,7 +10,7 @@ function LoginForm ({setCurrentUser}) {
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });

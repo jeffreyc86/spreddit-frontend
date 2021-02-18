@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 
 function SignUpForm ({setCurrentUser}){
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")

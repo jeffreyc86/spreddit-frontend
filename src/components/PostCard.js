@@ -4,7 +4,7 @@ import EditPostForm from './EditPostForm'
 
 function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray, editPost}){
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [liked, setLiked] = useState(false)
     const [showForm, setShowForm] = useState(false)

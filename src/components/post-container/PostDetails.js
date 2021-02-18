@@ -4,7 +4,7 @@ import EditPostForm from '../EditPostForm'
 
 function PostDetails({post, currentUser, addLikeToPost, deleteLikeFromPost, comments, editPost}){
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     const [liked, setLiked] = useState(true)
     const [showForm, setShowForm] = useState(false)

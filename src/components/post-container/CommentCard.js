@@ -4,7 +4,7 @@ function CommentCard({comment, currentUser, updateComment, removeComment}){
 
     const [showForm, setShowForm] = useState(false)
 
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
     
     function UpdateCommentForm() {
         const [newComment, setNewComment] = useState("")

@@ -8,7 +8,7 @@ function EditPostForm({post, setShowForm, editPost}){
     const [channel_id, setChannelId] = useState("")
     const [anonymous, setAnonymous] = useState(post.anonymous)
     
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
 
     function handleSubmit(e){

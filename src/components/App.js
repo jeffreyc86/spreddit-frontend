@@ -13,7 +13,7 @@ import ProfileContainer from "./profile-container/ProfileContainer"
 
 function App() {
 
-  const API = "http://localhost:3001/"
+  const API = "https://spreddit-app.herokuapp.com/"
 
   const [currentUser, setCurrentUser] = useState(null)
   const [channels, setChannels] = useState([])

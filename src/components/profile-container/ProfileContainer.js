@@ -10,7 +10,7 @@ function ProfileContainer({currentUser, setCurrentUser}) {
     const [userPosts, setUserPosts] = useState([])
     const [showHidden, setShowHidden] = useState(false)
     
-    const API = "http://localhost:3001/"
+    const API = "https://spreddit-app.herokuapp.com/"
 
     useEffect(() => {
         fetch(`${API}posts/`)
