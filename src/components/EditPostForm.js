@@ -1,52 +1,71 @@
 import React, {useState} from 'react'
-import {useHistory} from "react-router-dom"
 
-function NewPostForm({currentUser}) {
-
-    const API = "http://localhost:3001/"
+function EditPostForm({post, setShowForm, editPost}){
 
     const [image, setImage] = useState(null)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [channel_id, setChannelId] = useState("")
-    const [anonymous, setAnonymous] = useState(false)
+    const [anonymous, setAnonymous] = useState(post.anonymous)
     
-    
-    const history = useHistory()
+    const API = "http://localhost:3001/"
+
 
     function handleSubmit(e){
         e.preventDefault()
 
-        const userId = currentUser.id
+        let updatedTitle
+        let updatedContent
+        let updatedChannelId
+
+        if (title.length === 0) {
+            updatedTitle = post.title
+        } else {
+            updatedTitle = title
+        }
+
+        if (content.length === 0) {
+            updatedContent = post.content
+        } else {
+            updatedContent = content
+        }
+
+        if (channel_id.length === 0) {
+            updatedChannelId = post.channel_id
+        } else {
+            updatedChannelId = parseInt(channel_id)
+        }
 
         const form = new FormData()
-            form.append("title", title)
-            form.append("content", content)
-            form.append("channel_id", parseInt(channel_id))
-            form.append("user_id", userId)
+            form.append("title", updatedTitle)
+            form.append("content", updatedContent)
+            form.append("channel_id", updatedChannelId)
             form.append("anonymous", anonymous)
 
         if (image) {
             form.append("image", image)
         } 
 
-        fetch(`${API}posts`, {
-            method: 'POST',
+        fetch(`${API}posts/${post.id}`, {
+            method: "PATCH",
             body: form
         })
             .then(res=>res.json())
-            .then(newPostObj => {
-                history.push(`/posts/${newPostObj.id}`)
+            .then(updatedPost=>{
+                editPost(updatedPost)
             })
+
+        setShowForm(false)
     }
 
-    return (
-        <div className="new-post">
-            <img className="np-image" src={process.env.PUBLIC_URL + "/images/newpost.gif"} alt="show me what you got" />
+
+
+    return(
+        <div className="edit-post">
             <form className="post-form" onSubmit={handleSubmit}>
                 <div className="pf-input">
                     <label htmlFor="channel">Channel</label>
-                    <select required value={channel_id} onChange={(e)=>setChannelId(parseInt(e.target.value))}>
+                    <select value={channel_id} onChange={(e)=>setChannelId(e.target.value)}>
                         <option value="" disabled defaultValue>Select a Channel</option>
                         <option value="1">Quarantine Memes</option>
                         <option value="2">Pandemic 15++</option>
@@ -58,13 +77,13 @@ function NewPostForm({currentUser}) {
                 <br/>
                 <div className="pf-input">
                     <label htmlFor="title">Title</label>
-                    <input type="text" name="title" value={title} onChange={(e)=>setTitle(e.target.value)} required/>
+                    <input type="text" name="title" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder={post.title}/>
                 </div>
                 <br/>
                 <div className="pf-input">
                     <label htmlFor="content">Content</label>
                     <br/>
-                    <textarea type="text" name="content" rows="5" value={content} onChange={(e)=>setContent(e.target.value)}/>
+                    <textarea type="text" name="content" rows="5" value={content} onChange={(e)=>setContent(e.target.value)} placeholder={post.content}/>
                 </div>
                 <br/>
                 <div className="pf-input">
@@ -78,11 +97,11 @@ function NewPostForm({currentUser}) {
                     <input type="checkbox" name="anonymous" value={anonymous} onChange={(e)=>setAnonymous(e.target.checked)} />
                 </div>
                 <br/>
-                <button type="submit">Create Post</button>
+                <button type="submit">Edit Post</button>
             </form>
-        </div>
+        </div>        
     )
-    
+
 }
 
-export default NewPostForm;
+export default EditPostForm;

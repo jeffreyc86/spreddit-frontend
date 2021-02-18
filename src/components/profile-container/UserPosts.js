@@ -2,7 +2,7 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import PostCard from "../PostCard"
 
-function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
+function UserPosts({userPosts, editPost, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
 
     const history = useHistory()
 
@@ -16,7 +16,7 @@ function UserPosts({userPosts, currentUser, addLikeToPost, deleteLikeFromPost, d
                     <p>{newLikes} New {newLikes === 1 ? "Like" : "Likes"} in the past day</p>
                     <p>{newComments} New {newComments === 1 ? "Comment" : "Comments"} in the past day</p>
                 </div>
-                <PostCard key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
+                <PostCard key={post.id} post={post} editPost={editPost} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
             </div>
             )
     })

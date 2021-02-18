@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from "react-router-dom"
+import EditPostForm from './EditPostForm'
 
-function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
+function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray, editPost}){
 
     const API = "http://localhost:3001/"
 
     const [liked, setLiked] = useState(false)
+    const [showForm, setShowForm] = useState(false)
 
     useEffect(()=> {
         if (post.likes.filter(like => like.user_id === currentUser.id).length > 0){
@@ -65,8 +67,13 @@ function PostCard({post, currentUser, addLikeToPost, deleteLikeFromPost, deleteP
                     {liked ? <span style={{color: "#0079D3", fontWeight: "800"}}> ⇧</span> : <span> ⇧</span> }
                 </span>
                 <span onClick={goToPost} className="post-comments-count">{post.comments.length} {post.comments.length === 1 ? "Comment" : "Comments"}</span>
-                {post.user_id === currentUser.id ? <button className="pc-delete-button" onClick={deletePost}>Delete Post</button> : null }
+                {post.user_id === currentUser.id ? 
+                <div className="pc-buttons">
+                    <button className="pc-edit-button" onClick={()=>setShowForm(showForm=>!showForm)}>{!showForm ? "Edit Post" : "Nevermind"}</button> 
+                    <button className="pc-delete-button" onClick={deletePost}>Delete Post</button>
+                </div> : null }
             </div>
+                {!showForm ? null : <EditPostForm editPost={editPost} setShowForm={setShowForm} post={post}/>}
         </div>
     )
 }

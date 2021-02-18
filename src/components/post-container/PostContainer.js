@@ -58,13 +58,17 @@ function PostContainer({currentUser}){
         setComments(newArray)
     }
 
+    function editPost(updatedPost){
+        setPost(updatedPost)
+    }
+
  
     
     return(
         <div className="post-container">
             {post ?
             <>
-                <PostDetails currentUser={currentUser} post={post} comments={comments} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} />
+                <PostDetails currentUser={currentUser} post={post} comments={comments} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} editPost={editPost}/>
                 {post ? <CommentForm currentUser={currentUser} post={post} addComment={addComment} /> : null}
                 <CommentList comments={comments} updateComment={updateComment} removeComment={removeComment} currentUser={currentUser}/>
             </>

@@ -318,9 +318,11 @@ body {
   background-color: #ddd;
 }
 
-.pc-delete-button{
+.pc-buttons{
   display: block;
   float: right;
+}
+.pc-edit-button{
   margin: 0;
   margin-right: 14px;
   font-weight: 525;
@@ -331,9 +333,32 @@ body {
   border-radius: 3px;
 }
 
+.pc-edit-button:hover{
+  background-color: #FF4301;
+}
+
+.pc-delete-button{
+  margin: 0;
+  margin-right: 14px;
+  font-weight: 525;
+  text-decoration: none;
+  color: #F9F9FA;
+  background-color: rgb(152, 152, 152);
+  border: none;
+  border-radius: 3px;
+}
+
+
 .pc-delete-button:hover{
   background-color: #FF4301;
 }
+/* **************EDIT POST FORM************** */
+.edit-post{
+  border-top: solid .25px #dedede; 
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 /* **************POST DETAILS CONTAINER************** */
 
@@ -568,6 +593,7 @@ body {
 .post-form textarea{
   margin-top: 5px;
   width: 30vw;
+  font-family: inherit;
 }
 
 .post-form button{

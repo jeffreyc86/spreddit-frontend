@@ -1,10 +1,10 @@
 import React from 'react'
 import PostCard from "../PostCard"
 
-function TrendingPosts ({trendingPosts, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
+function TrendingPosts ({trendingPosts, editPost, currentUser, addLikeToPost, deleteLikeFromPost, deletePostFromArray}){
 
     const postsArr = trendingPosts.map((post) => {
-            return <PostCard key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
+            return <PostCard editPost={editPost} key={post.id} post={post} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
     })
 
 

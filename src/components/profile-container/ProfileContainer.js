@@ -84,6 +84,27 @@ function ProfileContainer({currentUser, setCurrentUser}) {
         setUserPosts(newUserPostsArray)
     }
 
+
+    function editPost(updatedPost){
+        const newTrendingPostsArray = trendingPosts.map(post=> {
+            if (post.id === updatedPost.id) {
+                return updatedPost
+            } else {
+                return post
+            }
+        })
+        setTrendingPosts(newTrendingPostsArray)
+
+        const newUserPostArray = userPosts.map(post=> {
+            if (post.id === updatedPost.id) {
+                return updatedPost
+            } else {
+                return post
+            }
+        })
+        setUserPosts(newUserPostArray)
+    }
+
     return (
         <div className="profile-container">
             <div className="pc-banner">
@@ -96,8 +117,8 @@ function ProfileContainer({currentUser, setCurrentUser}) {
                 </div>
             </div>
             {showHidden ? <UpdateUserForm currentUser={currentUser} setShowHidden={setShowHidden} setCurrentUser={setCurrentUser}/> : null }
-            <TrendingPosts trendingPosts={trendingPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
-            <UserPosts userPosts={userPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray}/>
+            <TrendingPosts trendingPosts={trendingPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray} editPost={editPost}/>
+            <UserPosts userPosts={userPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray} editPost={editPost}/>
         </div>
     )
 }
