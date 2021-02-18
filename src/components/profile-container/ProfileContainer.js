@@ -108,7 +108,7 @@ function ProfileContainer({currentUser, setCurrentUser}) {
     return (
         <div className="profile-container">
             <div className="pc-banner">
-                <div style={{display: "flex"}}>
+                <div className="pc-banner-welcome" style={{display: "flex"}}>
                     <img src={process.env.PUBLIC_URL + "/images/welcome.gif"} alt="welcome" />
                     <h1>Welcome, {currentUser.username}!</h1>
                 </div>

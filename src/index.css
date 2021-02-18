@@ -633,6 +633,10 @@ body {
   border: solid .25px black;
 }
 
+.pc-banner-welcome{
+  width: 72vw;
+}
+
 .pc-banner img{
   height: inherit;
 }
@@ -641,12 +645,13 @@ body {
   padding: 0;
   margin: 25px;
   margin-top: 19px;
+  margin-right: 0;
   font-size: 50px;
 }
 
 .settings img{
   height: 60px;
-  margin: 20px;
+  padding: 20px;
 }
 
 .account-settings{
