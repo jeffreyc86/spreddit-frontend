@@ -145,7 +145,7 @@ body {
 
 .footer{
   height: 40px;
-  width: 80vw;
+  width: 90vw;
   margin: auto;
   padding: 10px;
   text-align: center;
@@ -163,7 +163,7 @@ body {
 }
 
 .footer #footer-mh{
-  padding-left: 15px;
+  padding-left: 14.9px;
 }
 
 .footer a:visited{
