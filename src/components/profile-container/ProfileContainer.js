@@ -16,7 +16,7 @@ function ProfileContainer({currentUser, setCurrentUser}) {
         fetch(`${API}posts/`)
         .then(res => res.json())
         .then(postsObjs => {
-            setTrendingPosts([...postsObjs].splice(-3))
+            setTrendingPosts([...postsObjs].splice(-3).reverse())
             const currentUsersPosts = postsObjs.filter(post=>{return post.user_id === currentUser.id}).reverse()
             setUserPosts(currentUsersPosts)
         })
