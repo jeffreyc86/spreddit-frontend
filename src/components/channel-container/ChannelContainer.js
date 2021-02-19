@@ -18,7 +18,7 @@ function ChannelContainer({currentUser}){
             .then(res=>res.json())
             .then(channelObj => {
                 setChannel(channelObj)
-                setPosts(channelObj.posts)
+                setPosts(channelObj.posts.reverse())
             })
     },[id])
 

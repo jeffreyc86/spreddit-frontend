@@ -17,7 +17,7 @@ function ProfileContainer({currentUser, setCurrentUser}) {
         .then(res => res.json())
         .then(postsObjs => {
             setTrendingPosts([...postsObjs].splice(-3))
-            const currentUsersPosts = postsObjs.filter(post=>{return post.user_id === currentUser.id})
+            const currentUsersPosts = postsObjs.filter(post=>{return post.user_id === currentUser.id}).reverse()
             setUserPosts(currentUsersPosts)
         })
     },[currentUser.id])
