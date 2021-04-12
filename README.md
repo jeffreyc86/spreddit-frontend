@@ -1,10 +1,20 @@
-![a logo](https://res.cloudinary.com/dfpkfgg80/image/upload/v1613651832/logo_wyzhco.jpg)
-Spreddit is a network of communities based on common interests during the COVID-19 pandemic. Registered members are able to submit content, share their thoughts, and connects with other users across the globe.
+# Spreddit - Client
 
-Copyright (C) 2021 Jeffrey Chiu and Nana Lau
+Front end for [Spreddit](https://github.com/jeffreyc86/spreddit-demo), a web content and discussion application focused around pandemic related topics. Built with a `React` front end, a `Ruby on Rails` & `PostgreSQL` back end, and all custom CSS.
 
-### Disclosure
-This was created as an homage to [Reddit](https://www.reddit.com/) for our Phase 4 [Flatiron School](https://flatironschool.com/) project.
+[Live Link](https://spreddit.netlify.app/) / [Demo](https://www.loom.com/share/ee4777543eb6430098f9f0990072d761)
 
+Requires [Spreddit back end](https://github.com/jeffreyc86/spreddit-backend).
 
+To use, start api server and run:
+```zsh
+npm install && npm start
+```
 
+## Features
+
+1. User authentication through `JWT Tokens`
+2. Discover posts made within certain topic categories
+3. Like and comment on posts - Comments can be updated and deleted
+4. Create posts with image upload capability
+5. Users may delete posts that they've created
