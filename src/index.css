@@ -25,6 +25,8 @@ body {
 .navbar{
   background-color: white;
   height: 35px;
+  padding-top: .25rem;
+  padding-bottom: .1rem
 }
 
 .navbar-logo{
@@ -33,6 +35,7 @@ body {
   margin-top: 1px;
   margin-bottom: 1px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -305,6 +308,7 @@ body {
 
 .post-likes-count{
   padding: 6px;
+  cursor: pointer;
   /* margin-bottom: 5px; */
 }
 
@@ -314,6 +318,7 @@ body {
 
 .post-comments-count{
   padding: 6px;
+  cursor: pointer;
 }
 
 .post-comments-count:hover{
@@ -925,6 +930,17 @@ body {
   background-color: #FF4301;
 }
 
+.demo-login{
+  margin-top: 10px;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.demo-login:hover{
+  font-weight: bold;
+  color: #ff4301
+}
+
 /* **************HOME************** */
 .home{
   border-top: solid .25px #dedede; 
@@ -1007,10 +1023,13 @@ body {
   margin-top: 2vw;
   border: solid .25px #dedede; 
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .home-signup h1:hover{
   border: solid 2px #ff4301; 
 }
 
-
+button{
+  cursor: pointer
+}

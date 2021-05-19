@@ -113,7 +113,7 @@ function ProfileContainer({currentUser, setCurrentUser}) {
                     <h1>Welcome, {currentUser.username}!</h1>
                 </div>
                 <div className="settings">
-                    <img onClick={()=>{setShowHidden(showHidden=>!showHidden)}}src={process.env.PUBLIC_URL + "/images/settings.jpg"} alt="settings" />
+                    <img onClick={()=>{setShowHidden(showHidden=>!showHidden)}} style={{cursor: "pointer"}}src={process.env.PUBLIC_URL + "/images/settings.jpg"} alt="settings" />
                 </div>
             </div>
             {showHidden ? <UpdateUserForm currentUser={currentUser} setShowHidden={setShowHidden} setCurrentUser={setCurrentUser}/> : null }

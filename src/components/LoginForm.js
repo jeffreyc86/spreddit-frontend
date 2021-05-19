@@ -37,6 +37,23 @@ function LoginForm ({setCurrentUser}) {
             }
           });
       }
+
+      function demoLogin() {
+        fetch(`${API}login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username: "test123", password: "test1234" }),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+              const { user, token } = data;
+              localStorage.setItem("token", token);
+              setCurrentUser(user);
+              history.push("/profile");
+          });
+      }
     
       return (
         <div className="login-div">
@@ -68,6 +85,7 @@ function LoginForm ({setCurrentUser}) {
             {errors.map((error, index)=>{
                 return <p key={index} className="errors">{error}</p>
             })}
+            <div className="demo-login" onClick={demoLogin}>Demo Login</div>
         </div>
       );
     
