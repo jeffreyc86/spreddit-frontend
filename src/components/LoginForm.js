@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import {useHistory} from "react-router-dom"
 
 function LoginForm ({setCurrentUser}) {
+
+    const [demoClicked, setDemoClicked] = useState(false)
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -39,6 +41,7 @@ function LoginForm ({setCurrentUser}) {
       }
 
       function demoLogin() {
+        setDemoClicked(true)
         fetch(`${API}login`, {
           method: "POST",
           headers: {
@@ -57,35 +60,51 @@ function LoginForm ({setCurrentUser}) {
     
       return (
         <div className="login-div">
-        <h1>Loggin'</h1>
-        <img src={process.env.PUBLIC_URL + "/images/login.gif"} alt="login" />
-          <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
+          <h1>Loggin'</h1>
+          <img src={process.env.PUBLIC_URL + "/images/login.gif"} alt="login" />
+          <form
+            className="login-form"
+            onSubmit={handleSubmit}
+            autoComplete="off"
+          >
             <div>
-                <label htmlFor="username">Username</label>
-                <input
+              <label htmlFor="username">Username</label>
+              <input
                 type="text"
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
-                />
+              />
             </div>
-            <br/>
+            <br />
             <div>
-                <label htmlFor="password">Password</label>
-                <input
+              <label htmlFor="password">Password</label>
+              <input
                 type="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                />
+              />
             </div>
-            <br/>
+            <br />
             <button type="submit">Login</button>
           </form>
-            {errors.map((error, index)=>{
-                return <p key={index} className="errors">{error}</p>
-            })}
-            <div className="demo-login" onClick={demoLogin}>Demo Login</div>
+          {errors.map((error, index) => {
+            return (
+              <p key={index} className="errors">
+                {error}
+              </p>
+            );
+          })}
+          <div className="demo-login" onClick={demoLogin}>
+            Demo Login
+            {demoClicked && (
+              <>
+                <br />
+                <span className="demo-message">It may take a few seconds for the back end to fire up</span>
+              </>
+            )}
+          </div>
         </div>
       );
     

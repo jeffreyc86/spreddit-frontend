@@ -941,6 +941,16 @@ body {
   color: #ff4301
 }
 
+.demo-message{
+  font-size: .5rem;
+  color: black
+}
+
+.demo-login:hover > .demo-message{
+  font-weight: normal;
+  color: black
+}
+
 /* **************HOME************** */
 .home{
   border-top: solid .25px #dedede; 
