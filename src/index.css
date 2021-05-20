@@ -144,6 +144,29 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width: 670px) {
+  .navbar{
+    height: 30px;
+  }
+
+  .navbar-logo{
+    height: 25px
+  }
+  .navbar-left, .navbar-right a, .dropdown .dropbtn, .dropdown-content{
+    font-size: .8rem ;
+    padding: 7.25px 10px
+  }
+}
+
+@media screen and (max-width: 470px) {
+
+  .navbar-left, .navbar-right a, .dropdown .dropbtn, .dropdown-content{
+    font-size: .6rem;
+  }
+}
+
+
+
 /* **************FOOTER************** */
 
 .footer{
@@ -266,6 +289,7 @@ body {
   background-color: white;
 }
 
+
 .post-card:hover{
   border: solid .25px black
 }
@@ -358,6 +382,40 @@ body {
 
 .pc-delete-button:hover{
   background-color: #FF4301;
+}
+
+@media screen and (max-width: 700px) {
+
+
+  .post-card{
+    width: 70vw
+  }
+
+  .post-image{
+    width: 69vw
+  }
+
+  .post-likes-count, .post-comments-count, .pc-edit-button, .pc-delete-button{
+    font-size: .8rem
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .post-likes-count{
+    font-size: .6rem;
+  }
+
+  .post-comments-count{
+    font-size: .6rem;
+  }
+
+  .pc-edit-button, .pc-delete-button{
+    font-size: .6rem;
+    margin-right: 10px;
+  }
+
 }
 /* **************EDIT POST FORM************** */
 .edit-post{
@@ -641,6 +699,8 @@ body {
 }
 
 .pc-banner-welcome{
+  height: inherit;
+  display: flex;
   width: 73vw;
 }
 
@@ -656,10 +716,62 @@ body {
   font-size: 50px;
 }
 
+.settings{
+  height: inherit
+}
 .settings img{
   height: 60px;
   padding: 20px;
 }
+
+@media screen and (max-width: 992px) {
+  .pc-banner{
+    height: 80px;
+  }
+
+  .pc-banner h1{
+    font-size: 2.2rem;
+    margin: auto 20px;
+    margin-right: 0;
+  }
+
+  .settings img{
+    height: 60px;
+    padding: 10px;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pc-banner{
+    height: 70px;
+  }
+
+  .pc-banner h1{
+    font-size: 1.9rem;
+    margin: auto 15px;
+    margin-right: 0;
+  }
+
+  .settings img{
+    height: 50px;
+    padding: 10px;
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+
+  .pc-banner h1{
+    font-size: 1.2rem;
+    margin: auto 10px;
+    margin-right: 0;
+  }
+
+}
+
+
 
 .account-settings{
   background-color: white;
@@ -828,6 +940,23 @@ body {
   font-weight: 550;
   text-align: right;
   color: #FF4301;
+}
+
+@media screen and (max-width: 840px) {
+
+  .up-stats p{
+    font-size: .6rem;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .up-stats{
+    width: 70vw
+  }
+  .up-stats p{
+    font-size: .5rem;
+  }
 }
 
 
@@ -1000,6 +1129,27 @@ body {
 .random-quote img{
   height: 15px;
   margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .random-quote p{
+    font-size: .8rem
+  }
+
+  .random-quote img{
+    height: 10px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .random-quote p{
+    font-size: .7rem
+  }
+
+  .random-quote img{
+    height: 9px;
+  }
 }
 
 .quote-div{

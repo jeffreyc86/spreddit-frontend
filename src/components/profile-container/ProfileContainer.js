@@ -106,21 +106,51 @@ function ProfileContainer({currentUser, setCurrentUser}) {
     }
 
     return (
-        <div className="profile-container">
-            <div className="pc-banner">
-                <div className="pc-banner-welcome" style={{display: "flex"}}>
-                    <img src={process.env.PUBLIC_URL + "/images/welcome.gif"} alt="welcome" />
-                    <h1>Welcome, {currentUser.username}!</h1>
-                </div>
-                <div className="settings">
-                    <img onClick={()=>{setShowHidden(showHidden=>!showHidden)}} style={{cursor: "pointer"}}src={process.env.PUBLIC_URL + "/images/settings.jpg"} alt="settings" />
-                </div>
-            </div>
-            {showHidden ? <UpdateUserForm currentUser={currentUser} setShowHidden={setShowHidden} setCurrentUser={setCurrentUser}/> : null }
-            <TrendingPosts trendingPosts={trendingPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray} editPost={editPost}/>
-            <UserPosts userPosts={userPosts} currentUser={currentUser} addLikeToPost={addLikeToPost} deleteLikeFromPost={deleteLikeFromPost} deletePostFromArray={deletePostFromArray} editPost={editPost}/>
+      <div className="profile-container">
+        <div className="pc-banner">
+          <div className="pc-banner-welcome">
+            <img
+              src={process.env.PUBLIC_URL + "/images/welcome.gif"}
+              alt="welcome"
+            />
+            <h1>Welcome, {currentUser.username}!</h1>
+          </div>
+          <div className="settings">
+            <img
+              onClick={() => {
+                setShowHidden((showHidden) => !showHidden);
+              }}
+              style={{ cursor: "pointer" }}
+              src={process.env.PUBLIC_URL + "/images/settings.jpg"}
+              alt="settings"
+            />
+          </div>
         </div>
-    )
+        {showHidden ? (
+          <UpdateUserForm
+            currentUser={currentUser}
+            setShowHidden={setShowHidden}
+            setCurrentUser={setCurrentUser}
+          />
+        ) : null}
+        <TrendingPosts
+          trendingPosts={trendingPosts}
+          currentUser={currentUser}
+          addLikeToPost={addLikeToPost}
+          deleteLikeFromPost={deleteLikeFromPost}
+          deletePostFromArray={deletePostFromArray}
+          editPost={editPost}
+        />
+        <UserPosts
+          userPosts={userPosts}
+          currentUser={currentUser}
+          addLikeToPost={addLikeToPost}
+          deleteLikeFromPost={deleteLikeFromPost}
+          deletePostFromArray={deletePostFromArray}
+          editPost={editPost}
+        />
+      </div>
+    );
 }
 
 export default ProfileContainer;
