@@ -162,6 +162,7 @@ body {
 
   .navbar-left, .navbar-right a, .dropdown .dropbtn, .dropdown-content{
     font-size: .6rem;
+    padding: 7.25px 5px
   }
 }
 
@@ -203,6 +204,13 @@ body {
 .footer-logo{
   height: 30px;
   padding-top: 5px;
+  cursor: pointer
+}
+
+@media screen and (max-width: 750px) {
+  .footer{
+    padding: 0 0 10px
+  }
 }
 
 /* **************CHANNEL CONTAINER************** */
@@ -278,6 +286,66 @@ body {
   height: 28px;
 }
 
+@media screen and (max-width: 600px) {
+  .channel-banner{
+    height: 80px
+  }
+  .channel-banner-img{
+    height: 60px;
+  }
+
+  .channel-info h1{
+    font-size: 2rem;
+  }
+
+  .channel-banner p{
+    font-size: .7rem;
+    margin-left: 90px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .channel-banner{
+    height: 60px
+  }
+  .channel-banner-img{
+    height: 45px;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  .channel-info h1{
+    font-size: 1.5rem;
+  }
+
+  .channel-banner p{
+    font-size: .45rem;
+    margin-left: 65px;
+    margin-top: -17px
+  }
+
+  .searchbar{
+    font-size: .77rem;
+  }
+
+  .searchbar h4{
+    margin-left: 5px;
+  }
+
+  .searchbar input{
+    margin-left: 10px
+  }
+}
+
+@media screen and (max-width: 550px) {
+ .searchbar{
+    font-size: .77rem;
+  }
+
+  .searchbar h4{
+    margin-left: 5px;
+  }
+}
 /* **************POSTCARD************** */
 
 .post-card{
@@ -951,6 +1019,10 @@ body {
 
 
 @media screen and (max-width: 700px) {
+  .up-banner button {
+    font-size: .7rem
+  }
+
   .up-stats{
     width: 70vw
   }
@@ -958,6 +1030,13 @@ body {
     font-size: .5rem;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .up-banner button {
+    font-size: .5rem
+  }
+}
+
 
 
 /* **************SIGN UP FORM************** */
